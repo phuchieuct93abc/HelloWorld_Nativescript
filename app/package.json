@@ -1,5 +1,5 @@
 {
-  "main": "app.js",
-  "name": "nativescript-template-tutorial",
+  "main": "main.js",
+  "name": "nativescript-template-ng-groceries",
   "version": "3.4.0"
 }
