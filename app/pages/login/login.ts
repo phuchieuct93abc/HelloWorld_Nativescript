@@ -1,6 +1,8 @@
+import { Page } from 'tns-core-modules/ui/page';
 import { UserService } from './../../shared/user/user.service';
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { User } from "../../shared/user/user";
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: "LoginPage",
@@ -9,26 +11,38 @@ import { User } from "../../shared/user/user";
   providers: [UserService]
 
 })
-export class LoginPage {
+export class LoginPage implements OnInit {
+
   user: User;
   isLoggingIn: boolean;
-  constructor(private userService: UserService) {
+
+  constructor(private userService: UserService, private router: Router, private page: Page) {
     this.user = new User();
-    this.user.username = "my.test.account@nativescript.org";
-    this.user.password = "password";
+    this.user.username = "hieu";
+    this.user.password = "1234";
+ 
+
+
   }
-  submit() {
-    this.userService.register(this.user)
+  ngOnInit(): void {
+    this.page.actionBarHidden = true;
+    this.page.backgroundImage = "res://bg_login"; 
+  }
+  login() {
+    this.userService.login(this.user)
       .subscribe(
         () => {
-          alert("Your account was successfully created.");
-          this.toggleDisplay();
+          this.router.navigate(["/list"])
         },
-        () => alert("Unfortunately we were unable to create your account.")
+        () => alert("Unfortunately we were unable to login")
       );
 
   }
-  toggleDisplay() {
-    this.isLoggingIn = !this.isLoggingIn;
+  register() {
+    this.userService.register(this.user).subscribe(() => {
+      this.router.navigate(["/list"])
+
+    }, () => alert("Unfortunately we were unable to register"))
   }
+
 } 

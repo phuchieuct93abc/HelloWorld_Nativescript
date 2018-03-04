@@ -4,7 +4,6 @@
     <TextField hint="Email Address" [(ngModel)]="user.username" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
     <TextField hint="Password" [(ngModel)]="user.password" secure="true"></TextField>
 
-    <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
-    <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
-    <Button text="Sign up for Groceries"></Button>
-</StackLayout> 
+    <Button text="Sign in" class="submit-button" (tap)="login()"></Button>
+    <Button text="Sign up" (tap)="register()"></Button> 
+</StackLayout>  
