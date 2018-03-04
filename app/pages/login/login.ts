@@ -15,34 +15,41 @@ export class LoginPage implements OnInit {
 
   user: User;
   isLoggingIn: boolean;
+  isLoading: boolean;
 
   constructor(private userService: UserService, private router: Router, private page: Page) {
     this.user = new User();
     this.user.username = "hieu";
     this.user.password = "1234";
- 
+
 
 
   }
   ngOnInit(): void {
     this.page.actionBarHidden = true;
-    this.page.backgroundImage = "res://bg_login"; 
+    this.page.backgroundImage = "res://bg_login";
   }
   login() {
+    this.isLoading = true;
     this.userService.login(this.user)
       .subscribe(
         () => {
-          this.router.navigate(["/list"])
+          this.router.navigate(["/list"]);
+          this.isLoading = false;
+
         },
-        () => alert("Unfortunately we were unable to login")
+        () => { this.isLoading = false }
+
       );
 
   }
   register() {
     this.userService.register(this.user).subscribe(() => {
       this.router.navigate(["/list"])
+      this.isLoading = false;
 
-    }, () => alert("Unfortunately we were unable to register"))
+    }, () => { this.isLoading = false }
+    )
   }
 
 } 

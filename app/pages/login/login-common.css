@@ -3,6 +3,7 @@ StackLayout {
   margin-right: 30;
   padding-bottom: 15;
   background-color: white;
+  width: 300;
 }
 Image {
   margin-top: 5;

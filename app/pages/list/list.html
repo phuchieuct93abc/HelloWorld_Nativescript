@@ -1,10 +1,14 @@
-<GridLayout>
-    <ListView [items]="groceryList"  (itemTap)="onItemTap(event)" class="list-group">
+<GridLayout rows="auto,*">
+
+    <GridLayout row="0" columns="*, auto" class="add-bar">
+        <TextField hint="Enter grocery item" [(ngModel)]="addItem" col="0" #groceryTextField (returnPress)="add()"></TextField>
+        <Image [src]="isAdding ? 'res://menu' :'res://add'" col="1" (tap)="add()"></Image>        
+    </GridLayout>
+    <ListView [items]="groceryList"  (itemTap)="onItemTap(event)" row="1" class="small-spacing" [class.visible]="listLoaded">
         <ng-template let-item="item" let-odd="odd" let-even="even">
-          <StackLayout>
-            <Label [text]="item.title" class="list-group-item"></Label>
-            
-          </StackLayout>
+            <Label [text]="item.name" class="list-group-item" class="medium-spacing" [class.added]="addedItemId == item.id"></Label>
         </ng-template>
-    </ListView>
+    </ListView> 
+    <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+
 </GridLayout>
