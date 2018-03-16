@@ -1,0 +1,7 @@
+{
+    "folders": [{
+        "path": ".",
+        "folder_exclude_patterns": [".svn", "._d", ".metadata", ".settings","node_modules"],
+        "file_exclude_patterns": ["*.pyc", "*.pyo", ".project","*.js"]
+    }]
+}

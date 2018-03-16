@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "17159897246",
+    "firebase_url": "https://angularhero-3b066.firebaseio.com",
+    "project_id": "angularhero-3b066",
+    "storage_bucket": "angularhero-3b066.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17159897246:android:3d874e8dd99290db",
+        "android_client_info": {
+          "package_name": "com.hieu.lam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17159897246-in3ea68itaup3ae2elmhq211aohmliat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuURkINnv0uN0BQnT4QevCcZlO6DtvWkc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17159897246:android:e5f4ff4997c21e6d",
+        "android_client_info": {
+          "package_name": "org.nativescript.Groceries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17159897246-in3ea68itaup3ae2elmhq211aohmliat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuURkINnv0uN0BQnT4QevCcZlO6DtvWkc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

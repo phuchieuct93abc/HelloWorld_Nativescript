@@ -1,6 +1,7 @@
 import { GroceryListService } from './../../shared/grocery/grocery-list.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TextField } from "ui/text-field";
+import * as SocialShare from "nativescript-social-share";
 
 @Component({
     selector: "List",
@@ -21,6 +22,8 @@ export class ListComponent implements OnInit {
         if (this.addItem.trim() === "") {
             return;
         }
+        this.dismisKeyboard();
+
         this.isAdding = true;
         this.addedItemId = null
         this.groceryListService.add(this.addItem).subscribe((newItem) => {
@@ -34,7 +37,6 @@ export class ListComponent implements OnInit {
     }
     ngOnInit(): void {
         this.isLoading = true;
-        this.dismisKeyboard();
         this.groceryListService.load().subscribe((list) => {
             list.forEach(element => {
                 this.groceryList.unshift(element)
@@ -45,6 +47,9 @@ export class ListComponent implements OnInit {
 
     }
 
+    share(){
+        SocialShare.shareUrl("google.com","test share google")
+    }
     private dismisKeyboard() {
         let textField = <TextField>this.groceryTextField.nativeElement;
         textField.dismissSoftInput();

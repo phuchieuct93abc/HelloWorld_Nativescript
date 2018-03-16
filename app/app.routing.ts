@@ -1,3 +1,4 @@
+import { ArticleListComponent } from './pages/articleList/articleList';
 import { ListComponent } from './pages/list/list.component';
 import { LoginPage } from './pages/login/login';
 
@@ -7,5 +8,5 @@ export const routes = [
 ];
 
 export const navigatableComponents = [
-    LoginPage,ListComponent
+    LoginPage,ListComponent,ArticleListComponent
 ];
