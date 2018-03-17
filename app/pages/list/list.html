@@ -1,17 +1,17 @@
 <ActionBar title="Groceries">
     <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
   </ActionBar>
-<GridLayout rows="auto,*">
+<GridLayout rows="*,auto">
+ <ListView [items]="groceryList"  row="0" class="small-spacing" >
+        <ng-template let-item="item" let-odd="odd" let-even="even">
 
-    <GridLayout row="0" columns="*, auto" class="add-bar">
-        <TextField hint="Enter grocery item" [(ngModel)]="addItem" col="0" #groceryTextField (returnPress)="add()"></TextField>
+            <Label [class.sent]="item.userId == user.uid" [text]="item.name" class="list-group-item medium-spacing sent"  ></Label>
+        </ng-template>
+    </ListView>  
+    <GridLayout row="1" columns="*, auto" class="add-bar">
+        <TextField hint="Compose a message" [(ngModel)]="addItem" col="0" #groceryTextField (returnPress)="add()"></TextField>
         <Image [src]="isAdding ? 'res://menu' :'res://add'" col="1" (tap)="add()"></Image>        
     </GridLayout>
-    <ListView [items]="groceryList"  (itemTap)="onItemTap(event)" row="1" class="small-spacing" [class.visible]="listLoaded">
-        <ng-template let-item="item" let-odd="odd" let-even="even">
-            <Label [text]="item.name" class="list-group-item" class="medium-spacing" [class.added]="addedItemId == item.id"></Label>
-        </ng-template>
-    </ListView> 
-    <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+    
 
 </GridLayout>

@@ -4,7 +4,7 @@ import { LoginPage } from './pages/login/login';
 
 export const routes = [
     { path: "", component: LoginPage },
-    { path: "list", component: ListComponent }
+    { path: "chat", component: ListComponent }
 ];
 
 export const navigatableComponents = [
