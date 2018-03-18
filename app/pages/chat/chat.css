@@ -1,0 +1,34 @@
+ActionBar,ActionItem{
+  background-color: #02a9f7;
+  color:white;
+}
+
+.chat{
+	background-color: #f5f5f5;
+color:#02a9f7;
+padding:5 10;
+ border-radius: 50%
+}
+.chat.sent{
+  text-align: right;
+  background-color: #02a9f7;
+  color:white;
+
+}
+Label{
+	background-color: #02a9f7;
+}
+
+.add-bar {
+  padding: 5 10; 
+}
+.add-bar Image {
+  height: 15;
+  vertical-align: center;
+  margin-left: 10;
+  margin-right: 5;
+}
+TextField {
+  color: #02a9f7;
+}
+

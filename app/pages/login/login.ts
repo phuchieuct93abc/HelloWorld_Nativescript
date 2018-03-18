@@ -12,11 +12,8 @@ import * as firebase from "nativescript-plugin-firebase";
 
 })
 export class LoginPage implements OnInit {
-
   user: User;
-  isLoggingIn: boolean;
   isLoading: boolean;
-
   constructor(private router: Router, private page: Page) {
     this.user = new User();
     this.user.username = "hieu@gmail.com";
@@ -27,26 +24,27 @@ export class LoginPage implements OnInit {
   }
   ngOnInit(): void {
     this.page.actionBarHidden = true;
-    this.page.backgroundImage = "res://bg_login";
 
   }
   login() {
-  
-    firebase.login(
-      {
-        type: firebase.LoginType.PASSWORD,
-        passwordOptions: {
-          email: this.user.username,
-          password: this.user.password
-        }
+    this.isLoading = true;
+    firebase.login({
+      type: firebase.LoginType.PASSWORD,
+      passwordOptions: {
+        email: this.user.username,
+        password: this.user.password
+      }
+    })
+      .then(result => {
+        this.isLoading = false;
+
+        this.router.navigateByUrl("/chat")
       })
-      .then(result => this.router.navigateByUrl("/chat"))
-      .catch(error => alert("Login failed!"));
-
-
+      .catch(error => {
+        this.isLoading = false;
+        alert("Login failed!")
+      });
   }
-  register() {
 
-  }
 
 } 

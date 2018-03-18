@@ -1,0 +1,20 @@
+<ActionBar [title]="user.email">
+	    <ActionItem text="Delete" (tap)="deleteAll()" android.systemIcon="ic_delete" ios.systemIcon="16" ios.position="right"></ActionItem>
+  </ActionBar>
+<GridLayout rows="*,auto">
+ <ListView [items]="chatList"  row="0" class="small-spacing" separatorColor="transparent">
+        <ng-template let-item="item" let-odd="odd" let-even="even">
+          <StackLayout orientation="vertical"  height="210" >
+        <Label [class.sent]="item.userId == user.uid" [horizontalAlignment]="item.userId == user.uid? 'right':'left'" [text]="item.message" class=" medium-spacing chat"  ></Label>
+</StackLayout>
+
+            
+        </ng-template>
+    </ListView>  
+    <GridLayout row="1" columns="*, auto" class="add-bar">
+        <TextField hint="Compose a message" [(ngModel)]="addMessage" col="0" #groceryTextField (returnPress)="add()"></TextField>
+        <Image src="res://add" col="1" (tap)="add()"></Image>        
+    </GridLayout>   
+
+</GridLayout>
+

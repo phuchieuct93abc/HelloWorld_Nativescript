@@ -1,12 +1,11 @@
-import { ArticleListComponent } from './pages/articleList/articleList';
-import { ListComponent } from './pages/list/list.component';
+import { ChatComponent } from './pages/chat/chat.component';
 import { LoginPage } from './pages/login/login';
 
 export const routes = [
     { path: "", component: LoginPage },
-    { path: "chat", component: ListComponent }
+    { path: "chat", component: ChatComponent }
 ];
 
 export const navigatableComponents = [
-    LoginPage,ListComponent,ArticleListComponent
+    LoginPage,ChatComponent
 ];
