@@ -1,6 +1,6 @@
 <StackLayout horizontalAlignment="center" verticalAlignment="center">
 
-    <Image src="res://logo"  horizontalAlignment="center"></Image>
+    <Image src="res://logo"  horizontalAlignment="center" loadMode="async"></Image>
 
     <TextField hint="Email Address" [(ngModel)]="user.username" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
     <TextField hint="Password" [(ngModel)]="user.password" secure="true"></TextField>

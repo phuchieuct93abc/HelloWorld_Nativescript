@@ -7,8 +7,8 @@ import * as firebase from "nativescript-plugin-firebase";
 
 @Component({
   selector: "LoginPage",
-  templateUrl: "./pages/login/login.html",
-  styleUrls: ["pages/login/login-common.css"],
+  templateUrl: "./login.html",
+  styleUrls: ["./login-common.css"],
 
 })
 export class LoginPage implements OnInit {
@@ -16,8 +16,8 @@ export class LoginPage implements OnInit {
   isLoading: boolean;
   constructor(private router: Router, private page: Page) {
     this.user = new User();
-    this.user.username = "hieu@gmail.com";
-    this.user.password = "hieu1234";
+   // this.user.username = "hieu@gmail.com";
+   // this.user.password = "hieu1234";
 
 
 

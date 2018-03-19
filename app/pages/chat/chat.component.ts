@@ -7,8 +7,8 @@ const chatCollection = firebase.firestore.collection("chats");
 
 @Component({
     selector: "Chat",
-    templateUrl: "./pages/chat/chat.html",
-    styleUrls: ["./pages/chat/chat.css"],
+    templateUrl: "./chat.html",
+    styleUrls: ["./chat.css"],
 })
 export class ChatComponent implements OnInit {
     chatList: Array<Object> = [];
